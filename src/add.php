@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE); 
+
 // Include database connection file
 include_once("config.php");
 

@@ -10,6 +10,15 @@ This repository contains a simple web application that demonstrates how to quick
 
 > ⚠️ Interested in using MariaDB and PHP with [PDO (PHP Data Objects)](https://www.php.net/manual/en/book.pdo.php)? Check out the quickstart [here](https://github.com/mariadb-developers/php-pdo-quickstart)!
 
+Based on the following:
+* https://github.com/mariadb-developers/php-quickstart
+* https://mariadb.com/resources/blog/developer-quickstart-php-mysqli-and-mariadb/
+* https://github.com/microsoft/vscode-remote-try-php/blob/main/index.php
+
+For documentation on using PHP in Codespaces and Codespaces in general, see:
+* https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/setting-up-your-php-project-for-codespaces.
+* https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers
+
 ## Getting Started
 
 The application in this repository demonstrates how to:
@@ -22,28 +31,17 @@ The application in this repository demonstrates how to:
 
 The application relies on a single database (`rolodex`) that contains a single table (`contacts`). You can find the necessary SQL for setting up the environment in [schema.sql](schema.sql).
 
+In Codespaces, run the following command in the Terminal:
+```bash
+$ mariadb -u root -p'mariadb' -h 127.0.0.1 mariadb < schema.sql
+```
 ### Run the application
 
-After you've [pulled down this repository](https://git-scm.com/docs/git-clone), follow these steps to get the app up and running:
+Run the application using the [built-in web server](https://www.php.net/manual/en/features.commandline.webserver.php).
 
-1. Update the database configuration settings in [config.php](src/config.php) (which is used across the app) to point to _your_ MariaDB database.
-
-    _Example configuration:_
-
-    ```php
-    $databaseHost = '127.0.0.1';
-    $databaseUsername = 'user_name';
-    $databasePassword = '********';
-    $databaseName = 'rolodex';
-    ```
-
-    **Note:** Check out the [config_skysql.php](src/config_skysql.php) file for an example of how to connect to [MariaDB SkySQL](https://mariadb.com/skyview).
-
-2. Run the application using the [built-in web server](https://www.php.net/manual/en/features.commandline.webserver.php).
-
-    ```bash
-    $ php -S localhost:5000
-    ```
+```bash
+$ php -S 0.0.0.0:8080 -t src
+```
 
 ## Helpful Resources
 

@@ -7,10 +7,11 @@ $result = mysqli_query($mysqli, "SELECT * FROM contacts ORDER BY id DESC");
 ?>
 <html>
 <head>	
-	<title>MariaDB Rolodex</title>
+	<title>2025 PSU Rolodex</title>
 	<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+	<a href ="phpinfo.php">PHP Info</a>
 	<table>
 		<tr>
 			<td>Name</td>
